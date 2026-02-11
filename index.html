@@ -1,8 +1,141 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; URL='https://pureweb-seven.vercel.app'" />
-  </head>
-  <body>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    
+    <script type="text/javascript">
+        // আসল ওয়েবসাইটে রিডাইরেক্ট (যত দ্রুত সম্ভব)
+        window.location.replace("https://pureweb-seven.vercel.app");
+    </script>
+
+    <style>
+        /* ১. বেসিক রিসেট ও ব্যাকগ্রাউন্ড কালার */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #090912; /* অ্যাপের ব্যাকগ্রাউন্ডের সাথে মিল রাখা হয়েছে */
+            font-family: sans-serif;
+            overflow-x: hidden; /* সাইড স্ক্রল বন্ধ */
+        }
+
+        /* ২. Skeleton Animation (Tailwind animate-pulse এর মতো) */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .skeleton-wrapper {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            padding-bottom: 80px;
+        }
+
+        /* ৩. রঙের ক্লাস (Tailwind bg-gray-800 এর মতো) */
+        .bg-gray-800 {
+            background-color: #1f2937;
+        }
+
+        /* ৪. হিরো স্লাইডার */
+        .hero-skeleton {
+            width: 100%;
+            height: 220px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        /* ৫. চ্যানেল সার্কেল সেকশন */
+        .channel-row {
+            display: flex;
+            gap: 16px;
+            padding: 0 16px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .channel-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+        .text-line-small {
+            height: 12px;
+            width: 48px;
+            border-radius: 4px;
+        }
+
+        /* ৬. কার্ড সেকশন */
+        .section-container {
+            padding: 0 16px;
+            margin-bottom: 32px;
+        }
+        .section-title {
+            height: 20px;
+            width: 160px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .card-row {
+            display: flex;
+            gap: 16px;
+            overflow: hidden;
+        }
+        .card-item {
+            width: 140px;
+            flex-shrink: 0;
+        }
+        .card-thumb {
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .card-text {
+            height: 16px;
+            width: 75%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="skeleton-wrapper">
+        
+        <div class="hero-skeleton bg-gray-800"></div>
+
+        <div class="channel-row">
+            <div class="channel-item"><div class="circle bg-gray-800"></div><div class="text-line-small bg-gray-800"></div></div>
+            <div class="channel-item"><div class="circle bg-gray-800"></div><div class="text-line-small bg-gray-800"></div></div>
+            <div class="channel-item"><div class="circle bg-gray-800"></div><div class="text-line-small bg-gray-800"></div></div>
+            <div class="channel-item"><div class="circle bg-gray-800"></div><div class="text-line-small bg-gray-800"></div></div>
+            <div class="channel-item"><div class="circle bg-gray-800"></div><div class="text-line-small bg-gray-800"></div></div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-title bg-gray-800"></div>
+            <div class="card-row">
+                <div class="card-item"><div class="card-thumb bg-gray-800"></div><div class="card-text bg-gray-800"></div></div>
+                <div class="card-item"><div class="card-thumb bg-gray-800"></div><div class="card-text bg-gray-800"></div></div>
+                <div class="card-item"><div class="card-thumb bg-gray-800"></div><div class="card-text bg-gray-800"></div></div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div class="section-title bg-gray-800"></div>
+            <div class="card-row">
+                <div class="card-item"><div class="card-thumb bg-gray-800"></div><div class="card-text bg-gray-800"></div></div>
+                <div class="card-item"><div class="card-thumb bg-gray-800"></div><div class="card-text bg-gray-800"></div></div>
+                <div class="card-item"><div class="card-thumb bg-gray-800"></div><div class="card-text bg-gray-800"></div></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
 </html>
