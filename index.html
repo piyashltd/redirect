@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Opening Stream...</title>
     <script>
-        // আপনার সব শর্টলিংক এখানে লিস্ট করুন
         const links = {
-            "ks": "https://stream.mux.com/n7fAmQbGqIek7M5TH4uFTjRgte4oEuPG5600A5TGtRj00.m3u8",
-            "yt": "https://youtube.com/c/yourchannel",
-            "app": "https://play.google.com/store/apps/details?id=your.app",
-            "github": "https://github.com/yourusername"
+            // VLC দিয়ে প্লে করার শর্টলিংক 
+            "live-vlc": "vlc://https://your-server.com/live.m3u8",
+            
+            // MX Player দিয়ে প্লে করার শর্টলিংক
+            "live-mx": "intent:https://stream.mux.com/n7fAmQbGqIek7M5TH4uFTjRgte4oEuPG5600A5TGtRj00.m3u8#Intent;package=com.mxtech.videoplayer.ad;S.title=Sports_Live;end;"
         };
 
-        // URL এর শেষের # এর পরের অংশটুকু নেওয়া
         const hash = window.location.hash.substring(1); 
 
-        // রিডাইরেক্ট করার লজিক
+        // ব্রাউজার যাতে অটোমেটিক রিডাইরেক্ট করতে পারে
         if (links[hash]) {
-            // যদি লিংক লিস্টে থাকে, তাহলে রিডাইরেক্ট করবে
-            window.location.replace(links[hash]);
-        } else {
-            // যদি কোনো লিংক ম্যাচ না করে, তবে আপনার মেইন ওয়েবসাইটে যাবে
-            window.location.replace("https://your-default-website.com");
+            window.location.href = links[hash];
         }
     </script>
 </head>
 <body style="background-color: #121212; color: #fff; font-family: sans-serif; text-align: center; margin-top: 20%;">
-    <h2>Please wait, redirecting...</h2>
-    <p>If not redirected, check if the link is correct.</p>
+    <h2>Opening Video Player...</h2>
+    <p>If the player does not open automatically, click the button below:</p>
+    
+    <a id="playBtn" href="#" style="display: inline-block; padding: 10px 20px; background-color: #00e676; color: #121212; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px;">Click Here to Play</a>
+
+    <script>
+        // বাটনে লিংক সেট করে দেওয়া
+        if (links[hash]) {
+            document.getElementById("playBtn").href = links[hash];
+        } else {
+            document.getElementById("playBtn").style.display = "none";
+        }
+    </script>
 </body>
 </html>
